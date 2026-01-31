@@ -24,7 +24,8 @@ function App() {
         <Navbar />
         <ScrollToTop />
 
-        <Routes>
+        <div className="container">
+          <Routes>
           <Route path='/' element={<Shop />}></Route>
           <Route path='/register' element={<LoginSignup />}></Route>
           <Route path="/login" element={<Login />}></Route>
@@ -36,7 +37,8 @@ function App() {
           <Route path='/:category' element={<ShopCategories banner={kids_banner} category="kids" />}></Route>
           {/* single route that accepts a productId param */}
           <Route path='/product/:_id' element={<Product />}></Route>
-        </Routes>
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )

@@ -13,7 +13,7 @@ const Hero2= () => {
     speed: 400,       
     slidesToShow: 1,    
     slidesToScroll: 1,  
-    // autoplay: true,      
+    autoplay: true,      
     autoplaySpeed: 1500,
 }
 const navigate = useNavigate();

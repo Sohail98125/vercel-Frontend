@@ -30,21 +30,29 @@ const ShopCategories = () => {
     fetchProducts();
   }, [category]);
   const [bannerUrl, setBannerUrl] = useState(null)
+   const [bannerLoading, setBannerLoading] = useState(true);
 
   useEffect(() => {
    const fetchBanner = async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/${category}`);
+    try {
+        setBannerLoading(true);
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/${category}`
+        );
         setBannerUrl(res.data.image);
       } catch (err) {
         console.error("Error fetching banner:", err);
         setBannerUrl(null);
+      } finally {
+        setBannerLoading(false);
       }
     };
     fetchBanner();
   }, [category]);
 
-  if (loading) {
+ 
+  // ✅ GLOBAL LOADER
+  if (loading || bannerLoading) {
     return <Loader text="Loading products..." />;
   }
   return (

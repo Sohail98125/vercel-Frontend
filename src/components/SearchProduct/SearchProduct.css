@@ -37,19 +37,31 @@ form {
   background-color:  rgb(253, 77, 24);
   transform: scale(1.05);
 }
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px;
+    }
 
-/* Responsive */
-@media screen and (max-width: 500px) {
-  form {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .nav-logo p {
+        font-size: 20px;
+    }
 
-  .form-control {
-    width: 100%;
-  }
+    .nav-menu {
+        gap: 6px;
+        font-size: 12px;
+    }
 
-  .btn-primary{
-    width: 100%;
-  }
+    .nav-login-cart button {
+        width: 70px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .nav-cart-count {
+        height: 16px;
+        width: 16px;
+        font-size: 10px;
+        top: -6px;
+        left: -6px;
+    }
 }
